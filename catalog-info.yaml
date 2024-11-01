@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cc-githubactions-gitops
+  description: This is GitOps manifest for cc-githubactions   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: cc-githubactions
+    backstage.io/kubernetes-id: cc-githubactions 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: northdepot/cc-githubactions-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cc-githubactions
